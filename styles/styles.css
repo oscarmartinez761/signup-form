@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /*FONTS*/
+    --ff-poppins: 'Poppins', sans-serif;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+
+    /*COLORS*/
+
+    /*primary*/
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+
+    /*accent*/
+    --blue: hsl(248, 32%, 49%);
+
+    /*neutral*/
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%); 
+
+}
+
+/*RESETS*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image: url(../images/bg-intro-mobile.png);
+    background-color: var(--red);
+    font-family: var(--ff-poppins);
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    list-style: none;
+}
+.attribution {
+ font-size: 11px; 
+text-align: center;
+
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/*Utility Classes */
+
+.error__text,
+.error__icon {
+    display: none ;
+}
+
+li.error .error__text,
+li.error .error__icon {
+    display: block;
+
+}
+
+li.error input:invalid {
+    border: 2px solid var(--red);
+}
+
+.btn {
+    font-family: var(--ff-poppins);
+    color: var(--grayish-blue);
+    cursor: pointer;
+    border: none;
+
+}
+
+.btn__purple {
+    width: 300px;
+    border-radius: .8rem;
+    box-shadow:  0px 5px 0px 1px rgba(0,0,0,0.2);
+    padding: 2rem 3rem 2rem 3rem;
+    background-color: var(--blue);
+    margin-bottom: 2rem;
+}
+
+
+
+.btn__purple span {
+    color:#fff;
+    font-weight: var(--bold);
+}
+
+.btn__green {
+    width: 90%;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    padding: 1rem 3rem 1rem 3rem;
+    background-color: var(--green);
+    margin-bottom: 1rem;
+    color:#fff;
+    font-weight: var(--medium);
+    box-shadow:  0px 3px 0px 0px rgba(10, 150, 89, 0.8);
+}
+
+.btn__green:hover {
+    background-color: hsl(154, 80%, 63%);
+}
+
+
+/*HEADING*/
+
+.header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin: 3rem auto;
+}
+
+.header__title {
+    font-size: 3rem;
+    line-height: 1.3;
+    
+}
+
+.header__description {
+    line-height: 1.5;
+    font-size: 1.4rem;
+    padding: 1rem;
+    max-width: 300px;
+}
+
+/*FORM */
+
+.section__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form {
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: .8rem;
+    box-shadow:  0px 5px 0px 1px rgba(0,0,0,0.2);
+}
+
+.form li {
+    position: relative;
+}
+
+.form li  input {
+    width: 90%;
+    border: 1px solid var(--grayish-blue);
+    border-radius: .5rem;
+    font-family: var(--ff-poppins);
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+.form li input::placeholder {
+    color: var(--dark-blue);
+    font-weight: var(--medium);
+   
+}
+
+.form li input:focus {
+    outline: 0 none;
+}
+
+
+.error__icon {
+    width: 15px;
+    position: absolute;
+    top: 28%;
+    right: 40px;
+    
+    
+}
+
+ .error__text {
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: var(--semi-bold);
+    font-style: italic;
+    color: var(--red);
+    padding-bottom: 1rem;
+}
+
+.terms {
+    color: var(--grayish-blue);
+    text-align: center;
+    font-size: .9.5rem;
+}
+
+.terms span {
+    color: var(--red);
+    font-weight: var(--bold);
+}
+ 
+
+
+/*BREAKPOINTS*/
+@media screen and (min-width:1000px) {
+    body {
+        background-image: url(../images/bg-intro-desktop.png);
+        
+    }
+
+    main {
+        flex-direction: row;
+        justify-content: space-around;
+       
+    }
+
+    .header {
+        margin: auto 0 auto 0;
+        max-width: 700px;
+    }
+
+    .header__title {
+        font-size: 5rem;
+        padding: 2rem;
+        text-align:left ;
+    }
+
+    .header__description {
+        font-size: 2rem;
+        padding: 1rem;
+        max-width: 800px;
+        text-align: left;
+    }
+
+    .section__form {
+        margin-top: 4rem;
+        
+    }
+
+    .form {
+        min-width: 50rem;
+        
+    }
+
+    .btn__purple {
+        width: 100%;
+    }  
+
+}
+
